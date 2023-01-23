@@ -4,9 +4,9 @@ function operate(op, x, y) {
             return x + y;
         case '-':
             return x - y;
-        case '*':
+        case 'x':
             return x * y;
-        case '/':
+        case '÷':
             return x / y;
     }
     return NaN;
