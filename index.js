@@ -36,6 +36,11 @@ numberBtns.forEach((numberBtn) => {
 
 operatorBtns.forEach((operatorBtn) => {
     operatorBtn.addEventListener('click', e => {
+        if (prevDisplay.textContent !== '' && currentDisplay.textContent !== '0') {
+            number = Number(prevDisplay.textContent);
+            number2 = Number(currentDisplay.textContent);
+            currentDisplay.textContent = operate(operator, number, number2);
+        }
         operator = e.target.textContent;
         prevDisplay.textContent = currentDisplay.textContent;
         number = Number(currentDisplay.textContent);
