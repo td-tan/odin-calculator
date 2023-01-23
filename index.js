@@ -14,9 +14,15 @@ function operate(op, x, y) {
 
 const numberBtns = document.querySelectorAll('button[data-item="number"]');
 const display = document.querySelector('#display');
-
+let number = 0;
 numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click', e => {
-        display.textContent = e.target.textContent;
+        number = Number(e.target.textContent);
+
+        // Reset display by 0
+        if (display.textContent === '0') {
+            display.textContent = '';
+        }
+        display.textContent += number;
     });
 });
