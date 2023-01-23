@@ -49,5 +49,5 @@ enterBtn.addEventListener('click', () => {
 });
 
 clearBtn.addEventListener('click', () => {
-    currentDisplay.textContent = '';
+    currentDisplay.textContent = '0';
 });
