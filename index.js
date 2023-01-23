@@ -32,9 +32,9 @@ numberBtns.forEach((numberBtn) => {
 
 operatorBtns.forEach((operatorBtn) => {
     operatorBtn.addEventListener('click', e => {
-        display.textContent = '0';
         operator = e.target.textContent;
         number = Number(display.textContent);
+        display.textContent = '0';
     });
 });
 
