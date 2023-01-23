@@ -15,6 +15,8 @@ function operate(op, x, y) {
 const numberBtns = document.querySelectorAll('button[data-item="number"]');
 const operatorBtns = document.querySelectorAll('button[data-item="operator"]');
 const enterBtn = document.querySelector('button[data-item="enter"]');
+const clearBtn = document.querySelector('button[data-item="clear"]');
+
 const currentDisplay = document.querySelector('#current');
 const prevDisplay = document.querySelector('#prev');
 
@@ -44,4 +46,8 @@ operatorBtns.forEach((operatorBtn) => {
 enterBtn.addEventListener('click', () => {
     number2 = Number(currentDisplay.textContent);
     currentDisplay.textContent = operate(operator, number, number2);
+});
+
+clearBtn.addEventListener('click', () => {
+    currentDisplay.textContent = '';
 });
