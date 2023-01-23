@@ -18,6 +18,7 @@ const enterBtn = document.querySelector('button[data-item="enter"]');
 const display = document.querySelector('#display');
 
 let number = 0;
+let number2 = 0;
 let operator = '';
 
 numberBtns.forEach((numberBtn) => {
@@ -39,6 +40,6 @@ operatorBtns.forEach((operatorBtn) => {
 });
 
 enterBtn.addEventListener('click', () => {
-    const number2 = Number(display.textContent);
+    number2 = Number(display.textContent);
     display.textContent = operate(operator, number, number2);
 });
