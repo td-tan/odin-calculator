@@ -49,6 +49,9 @@ operatorBtns.forEach((operatorBtn) => {
 });
 
 enterBtn.addEventListener('click', () => {
+    if (!operator) {
+        return;
+    }
     number2 = Number(currentDisplay.textContent);
     currentDisplay.textContent = operate(operator, number, number2);
 });
