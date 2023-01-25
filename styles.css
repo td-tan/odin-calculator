@@ -17,6 +17,8 @@ footer {
     text-align: center;
     width: 100%;
     background-color: #5BC0BE;
+    position: absolute;
+    bottom: 0;
 }
 
 #github-profile {
