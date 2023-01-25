@@ -14,3 +14,16 @@ body {
     height: 50px;
     flex: 1 1 25%;
 }
+
+#display {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    background-color: #5BC0BE;
+    border-color: #0B132B;
+    color: #3A506B;
+}
