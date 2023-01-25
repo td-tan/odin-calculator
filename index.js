@@ -16,6 +16,7 @@ const numberBtns = document.querySelectorAll('button[data-item="number"]');
 const operatorBtns = document.querySelectorAll('button[data-item="operator"]');
 const enterBtn = document.querySelector('button[data-item="enter"]');
 const clearBtn = document.querySelector('button[data-item="clear"]');
+const delBtn = document.querySelector('button[data-item="delete"]');
 
 const currentDisplay = document.querySelector('#current');
 const prevDisplay = document.querySelector('#prev');
@@ -57,5 +58,13 @@ enterBtn.addEventListener('click', () => {
 });
 
 clearBtn.addEventListener('click', () => {
+    currentDisplay.textContent = '0';
+});
+
+delBtn.addEventListener('click', () => {
+    number = 0;
+    number2 = 0;
+    operator = '';
+    prevDisplay.textContent = '';
     currentDisplay.textContent = '0';
 });
