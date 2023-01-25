@@ -12,6 +12,14 @@ function operate(op, x, y) {
     return NaN;
 }
 
+function unary(op, x) {
+    switch(op) {
+        case '%':
+            return x / 100;
+    }
+    return NaN;
+}
+
 const numberBtns = document.querySelectorAll('button[data-item="number"]');
 const operatorBtns = document.querySelectorAll('button[data-item="operator"]');
 const enterBtn = document.querySelector('button[data-item="enter"]');
@@ -37,12 +45,15 @@ numberBtns.forEach((numberBtn) => {
 
 operatorBtns.forEach((operatorBtn) => {
     operatorBtn.addEventListener('click', e => {
-        if (prevDisplay.textContent !== '' && currentDisplay.textContent !== '0') {
+        operator = e.target.textContent;
+        if (operator === '%') {
+            number = Number(currentDisplay.textContent);
+            currentDisplay.textContent = unary(operator, number);
+        } else if (prevDisplay.textContent !== '' && currentDisplay.textContent !== '0') {
             number = Number(prevDisplay.textContent);
             number2 = Number(currentDisplay.textContent);
             currentDisplay.textContent = operate(operator, number, number2);
         }
-        operator = e.target.textContent;
         prevDisplay.textContent = currentDisplay.textContent;
         number = Number(currentDisplay.textContent);
         currentDisplay.textContent = '0';
