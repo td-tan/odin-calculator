@@ -45,8 +45,10 @@ numberBtns.forEach((numberBtn) => {
 
 operatorBtns.forEach((operatorBtn) => {
     operatorBtn.addEventListener('click', e => {
+        let unaryOp = false;
         operator = e.target.textContent;
         if (operator === '%') {
+            unaryOp = true;
             number = Number(currentDisplay.textContent);
             currentDisplay.textContent = unary(operator, number);
         } else if (prevDisplay.textContent !== '' && currentDisplay.textContent !== '0') {
@@ -54,9 +56,11 @@ operatorBtns.forEach((operatorBtn) => {
             number2 = Number(currentDisplay.textContent);
             currentDisplay.textContent = operate(operator, number, number2);
         }
-        prevDisplay.textContent = currentDisplay.textContent;
-        number = Number(currentDisplay.textContent);
-        currentDisplay.textContent = '0';
+        if (!unaryOp) {
+            prevDisplay.textContent = currentDisplay.textContent;
+            number = Number(currentDisplay.textContent);
+            currentDisplay.textContent = '0';
+        }
     });
 });
 
