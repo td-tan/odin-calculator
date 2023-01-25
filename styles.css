@@ -13,6 +13,17 @@ header {
     color: orange;
 }
 
+footer {
+    text-align: center;
+    width: 100%;
+    background-color: #5BC0BE;
+}
+
+#github-profile {
+    width: 64px;
+    height: 64px;
+}
+
 #keys-container {
     width: 300px;
     display: flex;
