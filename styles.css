@@ -4,6 +4,13 @@ body {
     align-items: center;
 }
 
+header {
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 #keys-container {
     width: 300px;
     display: flex;
