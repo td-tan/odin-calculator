@@ -27,3 +27,15 @@ body {
     border-color: #0B132B;
     color: #3A506B;
 }
+
+button {
+    background-color: #3A506B;
+    border-color: #3A506B;
+    color: #5BC0BE;
+}
+
+button[data-item="number"] {
+    background-color: #5BC0BE;
+    border-color: #0B132B;
+    color: #3A506B;
+}
