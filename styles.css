@@ -39,3 +39,14 @@ button[data-item="number"] {
     border-color: #0B132B;
     color: #3A506B;
 }
+
+button:hover {
+    background-color: orange;
+    border-color: #0B132B;
+    color: #3A506B;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(255, 175, 26);
+}
