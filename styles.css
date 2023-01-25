@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3A506B;
+}
+
+header {
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: orange;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    background-color: #5BC0BE;
+    position: absolute;
+    bottom: 0;
+}
+
+#github-profile {
+    width: 64px;
+    height: 64px;
+}
+
+#keys-container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#keys-container > button {
+    height: 50px;
+    flex: 1 1 25%;
+}
+
+#display {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    background-color: #5BC0BE;
+    border-color: #0B132B;
+    color: #3A506B;
+}
+
+button {
+    background-color: #3A506B;
+    border-color: #3A506B;
+    color: #5BC0BE;
+}
+
+button[data-item="number"] {
+    background-color: #5BC0BE;
+    border-color: #0B132B;
+    color: #3A506B;
+}
+
+button:hover {
+    background-color: orange;
+    border-color: #0B132B;
+    color: #3A506B;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(255, 175, 26);
+}
