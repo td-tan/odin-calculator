@@ -16,12 +16,16 @@ function unary(op, x) {
     switch(op) {
         case '%':
             return x / 100;
+        case "+/-":
+            return -x;
     }
     return NaN;
 }
 
 const numberBtns = document.querySelectorAll('button[data-item="number"]');
 const operatorBtns = document.querySelectorAll('button[data-item="operator"]');
+const unaryBtns = document.querySelectorAll('button[data-item="unary"]');
+
 const enterBtn = document.querySelector('button[data-item="enter"]');
 const clearBtn = document.querySelector('button[data-item="clear"]');
 const delBtn = document.querySelector('button[data-item="delete"]');
@@ -45,22 +49,22 @@ numberBtns.forEach((numberBtn) => {
 
 operatorBtns.forEach((operatorBtn) => {
     operatorBtn.addEventListener('click', e => {
-        let unaryOp = false;
-        operator = e.target.textContent;
-        if (operator === '%') {
-            unaryOp = true;
-            number = Number(currentDisplay.textContent);
-            currentDisplay.textContent = unary(operator, number);
-        } else if (prevDisplay.textContent !== '' && currentDisplay.textContent !== '0') {
+        if (prevDisplay.textContent !== '' && currentDisplay.textContent !== '0') {
             number = Number(prevDisplay.textContent);
             number2 = Number(currentDisplay.textContent);
             currentDisplay.textContent = operate(operator, number, number2);
         }
-        if (!unaryOp) {
-            prevDisplay.textContent = currentDisplay.textContent;
-            number = Number(currentDisplay.textContent);
-            currentDisplay.textContent = '0';
-        }
+        operator = e.target.textContent;
+        prevDisplay.textContent = currentDisplay.textContent;
+        number = Number(currentDisplay.textContent);
+        currentDisplay.textContent = '0';
+    });
+});
+
+unaryBtns.forEach((unaryBtn) => {
+    unaryBtn.addEventListener('click', (e) => {
+        number = Number(currentDisplay.textContent);
+        currentDisplay.textContent = unary(e.target.textContent, number);
     });
 });
 
