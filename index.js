@@ -25,6 +25,7 @@ function unary(op, x) {
 const numberBtns = document.querySelectorAll('button[data-item="number"]');
 const operatorBtns = document.querySelectorAll('button[data-item="operator"]');
 const unaryBtns = document.querySelectorAll('button[data-item="unary"]');
+const floatBtn = document.querySelector('button[data-item="float"]');
 
 const enterBtn = document.querySelector('button[data-item="enter"]');
 const clearBtn = document.querySelector('button[data-item="clear"]');
@@ -66,6 +67,13 @@ unaryBtns.forEach((unaryBtn) => {
         number = Number(currentDisplay.textContent);
         currentDisplay.textContent = unary(e.target.textContent, number);
     });
+});
+
+floatBtn.addEventListener('click', () => {
+    const test = Number(currentDisplay.textContent + '.0');
+    if (test) {
+        currentDisplay.textContent += '.';
+    }
 });
 
 enterBtn.addEventListener('click', () => {
